@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("skijump1.jpg"); 
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#jumps" class="w3-button w3-block w3-black">GREATEST JUMPS</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#record" class="w3-button w3-block w3-black">RECORD</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">To Infinity... <br>and Beyond.</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT SKI JUMPING</span></h5>
+    <p>Ski jumping is a winter sport in which competitors aim to achieve the farthest jump after sliding down on their skis from a specially designed curved ramp.</p>
+    <p>Along with jump length, competitor's aerial style and other factors also affect the final score. Ski jumping was first contested in Norway in the late 19th century, and later spread through Europe and North America in the early 20th century.</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"I now realize that the small hills you see on ski slopes are formed around the bodies of forty-seven-year-olds who tried to learn snowboarding."<br>Dave Barry</i></p>
+    </div>
+    <img src="skijump2.webp" title="Curved ramp" style="width:100%;max-width:1000px" class="w3-margin-top">
+    
+  </div>
+</div>
+
+<!-- Jumps Container -->
+<div class="w3-container" id="jumps">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">GREATEST JUMPS OF ALL TIME</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openJumps(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">Men</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openJumps(event, 'Drinks');">
+        <div class="w3-col s6 tablink">Women</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container jumps w3-padding-48 w3-card">
+      <h5>1. Stefan Kraft <br>18 March 2017</h5>
+      <p class="w3-text-grey">Setting up the world record by Stefan Kraft meant that he made the impossible possible. <br>Jump length: 253.5 metres (832 feet)</p><br>
+    
+      <h5>2. Robert Johansson <br>18 March 2017</h5>
+      <p class="w3-text-grey">Achieving the second place of the world record by Robert Johansson. <br>Same day as the record holder, chances are low, yet they conquered everything. <br>Jump length: 252 metres (827 feet)</p><br>
+    
+      <h5>3. Anders Fannemel <br>15 February 2015</h5>
+      <p class="w3-text-grey">Proudly taking the third place by Anders Fannemel. <br>Hardest willing competitors put against each other, all 3 of them being pretty close to the highest victory, the honourable first place. <br>They must keep in mind though, only one of them can be the first. <br>Nonetheless they are pretty brave souls. <br>Jump length: 251.5 metres (825 feet)</p><br>
+    
+      
+    </div>
+
+    <div id="Drinks" class="w3-container jumps w3-padding-48 w3-card">
+      <h5>1. Daniela Iraschko-Stolz <br>29 January 2003</h5>
+      <p class="w3-text-grey">Jump length: 200 metres (656 feet)</p><br>
+    
+      <h5>2. Daniela Iraschko-Stolz <br>29 January 2003</h5>
+      <p class="w3-text-grey">Holding two records at once, owning the second place aswell. <br>Jump length: 188 metres (617 feet)</p><br>
+    
+      <h5>3. Eva Ganster <br>9 February 1997</h5>
+      <p class="w3-text-grey">Jump length: 167 metres (548 feet)</p><br>
+    
+      
+    </div>
+  
+    <img src="skijump3.jpg" id="record" title="Stefan Kraft - World Record holder" style="width:100%;max-width:1000px;margin-top:32px;">
+    
+  </div>
+</div>
+
+
+
+
+<script>
+// Tabbed jumps
+function openJumps(evt, jumpsName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("jumps");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(jumpsName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+</body>
+</html>
